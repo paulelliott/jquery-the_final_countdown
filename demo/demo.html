@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type='text/javascript' src='../jquery.the_final_countdown.js'></script>
+    <script type='text/javascript'>
+      $(function() {
+          $("#timer30").createTimer({time_in_seconds: 30});
+          $("#timer_default").createTimer();
+
+          $("#timer_toggle").click(function() {
+            if ($("#timer_default").data('countdown.state') == 'running') {
+              $("#timer_default").pauseTimer();
+            } else {
+              $("#timer_default").startTimer();
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <p>Timer with 30 seconds on the clock: <span id="timer30"></span></p>
+    <p><a href="#" id="timer_toggle">Start/Stop Timer</a>: <span id="timer_default"></span></p>
+  </body>
+</html>

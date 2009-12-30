@@ -13,7 +13,7 @@
     return $.extend({
       time_in_seconds: 3600,
       time_format: 'MM:ss',
-      tick: function(timer, time_in_seconds) {},
+      tick: function(timer, time_in_seconds, formatted_time) {},
       buzzer: function(timer) {},
       autostart: true
     }, user_settings);
@@ -50,9 +50,11 @@
               current_time = 0;
               settings.buzzer(timer);
             }
+
             timer.data('countdown.duration', current_time * 1000);
-            timer.text(dateFormat(new Date(current_time * 1000), settings.time_format));
-            settings.tick(timer, current_time);
+            var formatted_time = dateFormat(new Date(current_time * 1000), settings.time_format);
+            timer.text(formatted_time);
+            settings.tick(timer, current_time, formatted_time);
           } else {
             clearInterval(interval);
           }

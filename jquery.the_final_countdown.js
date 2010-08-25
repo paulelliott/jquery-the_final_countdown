@@ -76,11 +76,13 @@
         data('countdown.state', 'ready').
         data('countdown.timer_id', new Date().getTime());
 
-      /* Uncomment if you wish to reset the timer and roll it back on (if autostart = true). 
+      /* Comment if you wish to reset the timer and stop it from rollback (if autostart = true). */
+
       if (settings.autostart) {
         this.startTimer(settings);
       }
-      */
+
+      /* --- */
 
       return this;
     },

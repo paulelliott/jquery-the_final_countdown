@@ -6,6 +6,9 @@
  * Copyright (c) 2009 Paul Elliott (paul@codingfrontier.com)
  *
  * Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+ * 
+ * Added resetTimer function to enable timer resets. - Pratik - desai@pratyk.com
+ *
  */
 (function($) {
   function configuration(user_settings) {
@@ -63,6 +66,25 @@
         }, 1000);
       });
     },
+
+    resetTimer: function(user_settings) {
+      var settings = configuration(user_settings);
+      var timers = this;
+
+      timers.text(dateFormat(new Date(settings.time_in_seconds * 1000), settings.time_format)).
+        data('countdown.duration', settings.time_in_seconds * 1000).
+        data('countdown.state', 'ready').
+        data('countdown.timer_id', new Date().getTime());
+
+      /* Uncomment if you wish to reset the timer and roll it back on (if autostart = true). 
+      if (settings.autostart) {
+        this.startTimer(settings);
+      }
+      */
+
+      return this;
+    },
+    
 
     pauseTimer: function() {
       return this.data('countdown.state', 'paused');

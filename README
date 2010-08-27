@@ -97,3 +97,7 @@ Options:
     No equivalent in CF.
     UTC:	Must be the first four characters of the mask. Converts the date from local time to UTC/GMT/Zulu time before applying the mask. The "UTC:" prefix is removed.
     No equivalent in CF.
+
+Contributors:
+
+  Pratik Desai (desigooner)

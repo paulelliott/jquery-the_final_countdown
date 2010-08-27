@@ -38,5 +38,26 @@ Screw.Unit(function() {
         expect($("#countdown").data('countdown.state')).to(equal, 'paused');
       });
     });
+
+    describe('when a timer is reset', function() {
+      describe('without an overriding duration', function() {
+        before(function() {
+          $("#countdown").createTimer({time_in_seconds:100}).resetTimer();
+        });
+
+        it("has retains the original duration", function() {
+          expect($("#countdown").data('countdown.duration')).to(equal, 100000);
+        });
+      });
+      describe('with an overriding duration', function() {
+        before(function() {
+          $("#countdown").createTimer().resetTimer({time_in_seconds:200});
+        });
+
+        it("has the new duration", function() {
+          expect($("#countdown").data('countdown.duration')).to(equal, 200000);
+        });
+      });
+    });
   });
 });

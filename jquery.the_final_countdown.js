@@ -74,7 +74,12 @@
 
     pauseTimer: function() {
       return this.data('countdown.state', 'paused');
+    } ,
+
+    getTimerValue: function() {
+        return this.data('countdown.duration');
     }
+
   });
 
   /*

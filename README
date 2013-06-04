@@ -25,6 +25,9 @@ Example:
   //To pause a running timer
   $("#timer").pauseTimer();
 
+  //To get the current timer value
+  $("#timer").getTimerValue();
+
 Options:
 
   time_in_seconds

@@ -1,6 +1,6 @@
 The Final Countdown - jQuery Timer Plugin
 
-This plugin provides a simple countdown timer. You can invoke it on any DOM element and it will update the content with a timer that counts down seconds.
+This plugin provides a simple countdown timer. You can invoke it on any DOM element and it will update the content with a timer that counts down seconds. This plugin must be included after the DOM element where the timer is invoked.
 
 Demo URL: http://codingfrontier.heroku.com/jquery-the_final_countdown/demo/demo.html
 Spec URL: http://codingfrontier.heroku.com/jquery-the_final_countdown/spec/suite.html
